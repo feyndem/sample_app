@@ -24,6 +24,8 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'haml-rails', '~> 0.4'
 gem 'pg', '0.15.1'
+gem 'compass'
+gem 'zurb-foundation', '~> 4.3.2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
@@ -33,6 +35,4 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-group :assets do
-  gem 'zurb-foundation', '~> 4.3.2'
-end
+

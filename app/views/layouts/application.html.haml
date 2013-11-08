@@ -6,5 +6,25 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body  
-  = yield
+  %body
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %h1
+            = link_to "sample app", '#', id: "logo" 
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span Menu
+      %section.top-bar-section
+        %ul.left
+          %li.divider
+          %li.active
+            = link_to "Home", "#"
+          %li.divider
+          %li.active
+            = link_to "Help", "#"
+          %li.divider
+          %li.active
+            = link_to "Sign in", "#"
+    %div.container
+      = yield
