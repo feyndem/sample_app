@@ -26,6 +26,7 @@ gem 'haml-rails', '~> 0.4'
 gem 'pg', '0.15.1'
 gem 'compass'
 gem 'zurb-foundation', '~> 4.3.2'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
