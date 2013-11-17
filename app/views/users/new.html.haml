@@ -2,4 +2,15 @@
 %div.row
   %div.large-12.large-centered.columns
     %h1 Sign Up
-    %p Here goes the sign up form.    
+    = form_for(@user) do |f|
+      = render 'shared/error_messages'
+      = f.label :name
+      = f.text_field :name
+      = f.label :email
+      = f.text_field :email
+      = f.label :password
+      = f.password_field :password
+      = f.label :password_confirmation, "Confirmation"
+      = f.password_field :password_confirmation
+      
+      = f.submit "Create my account", class: "button"

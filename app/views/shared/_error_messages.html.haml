@@ -1,0 +1,11 @@
+- if @user.errors.any?
+  %div#error_explanation
+    %div.alert_error.alert
+      %h4.subheader 
+        The form contains
+        = succeed ':'do
+          = pluralize(@user.errors.count, "error")        
+    %ul.square
+      - @user.errors.full_messages.each do |msg|
+        %li        
+          = msg
