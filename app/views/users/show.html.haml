@@ -1,0 +1,8 @@
+= provide(:title, @user.name)
+%div.row
+  %div.large-4.large.columns.sidebar
+    %section
+      %h3<
+        = gravatar_for @user
+        = @user.name
+  %div.large-8.large.columns    
