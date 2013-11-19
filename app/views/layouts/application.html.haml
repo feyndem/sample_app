@@ -5,6 +5,7 @@
       = full_title(yield(:title))
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
+    = javascript_include_tag :modernizr
     = csrf_meta_tags
   %body
     = render 'layouts/header'

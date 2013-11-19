@@ -16,5 +16,19 @@
         %li.active
           = link_to "Help", help_path
         %li.divider
-        %li.active
-          = link_to "Sign in", signin_path
+        - if signed_in?           
+          %li.has-dropdown.not-click 
+            %a{:href => "#"} Account
+            %ul.dropdown
+              %li.title.back.js-generated
+                %h5
+                  %a{:href => "#"} Back
+              %li 
+                = link_to "Profile", current_user
+              %li
+                = link_to "Settings", '#'
+              %li
+                = link_to "Sign Out", signout_path, method: "delete"
+        - else
+          %li.active
+            = link_to "Sign in", signin_path
