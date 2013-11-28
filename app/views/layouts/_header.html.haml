@@ -16,7 +16,10 @@
         %li.active
           = link_to "Help", help_path
         %li.divider
-        - if signed_in?           
+        - if signed_in?
+          %li.active
+            = link_to "Users", users_path
+          %li.divider            
           %li.has-dropdown.not-click 
             %a{:href => "#"} Account
             %ul.dropdown
