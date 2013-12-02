@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   end
   
   def new
+    if current_user
+      redirect_to root_url
+    end
     @user = User.new
   end
   
@@ -16,6 +19,9 @@ class UsersController < ApplicationController
   end
   
   def create
+    if current_user
+      redirect_to root_url
+    end    
     @user = User.new(user_params)
     if @user.save
       sign_in @user
