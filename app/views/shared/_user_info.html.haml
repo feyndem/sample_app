@@ -1,0 +1,7 @@
+= link_to gravatar_for(current_user, size: 104), current_user
+%h3
+  = current_user.name
+%p
+  = link_to "View my profile", current_user
+%p    
+  = pluralize(current_user.microposts.count, "micropost")

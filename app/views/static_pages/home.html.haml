@@ -1,11 +1,20 @@
 = provide(:title, 'Home')
-%div.row
-  %div.large-12.large-centered.columns
-    %h1 Welcome to the Sample App
-    %h3.subheader<
-      This is the home page for the
-      %a{:href => "http://railstutorial.org/"}Ruby on Rails Tutorial
-      sample application.
-    = link_to "Sign up now!", signup_path, class: "button"
-  %div.large-12.columns 
-    = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'    
+
+- if signed_in?
+  %div.row
+    %div.large-4.columns
+      %section.userhome
+        = render 'shared/user_info'
+      %section
+        = render 'shared/micropost_form'
+- else
+  %div.row
+    %div.large-12.large-centered.columns
+      %h1 Welcome to the Sample App
+      %h3.subheader<
+        This is the home page for the
+        %a{:href => "http://railstutorial.org/"}Ruby on Rails Tutorial
+        sample application.
+      = link_to "Sign up now!", signup_path, class: "button"
+    %div.large-12.columns 
+      = link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'    
