@@ -5,7 +5,10 @@
       %h3<
         = gravatar_for @user
         = @user.name
-  %div.large-8.large.columns  
+    %section
+      = render 'shared/stats'
+  %div.large-8.large.columns
+    = render 'follow_form' if signed_in?
     - if @user.microposts.any?
       %h3
         Microposts
