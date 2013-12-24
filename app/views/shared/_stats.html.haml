@@ -1,4 +1,4 @@
 - @user ||= current_user
 %div.stats
   = link_to "#{@user.followed_users.count} following", following_user_path(@user), class: "stat"
-  = link_to "#{@user.followers.count} followers", followers_user_path(@user), class: "stat"
+  = link_to "#{@user.followers.count} followers", followers_user_path(@user), class: "stat", id: "followers"
